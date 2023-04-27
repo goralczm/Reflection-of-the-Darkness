@@ -15,3 +15,4 @@ MonoBehaviour:
   name: Note #1
   description: Once upon a time was...
   icon: {fileID: 21300000, guid: 144aa74618b85974a9a50f612c2fa8fd, type: 3}
+  mirror: 1

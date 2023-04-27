@@ -8,4 +8,5 @@ public class Item : ScriptableObject
     public new string name;
     [TextArea(10, 10)] public string description;
     public Sprite icon;
+    public bool mirror;
 }

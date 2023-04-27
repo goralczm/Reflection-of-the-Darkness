@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
@@ -21,8 +22,14 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    public UITweener notePanel;
-    public TextMeshProUGUI noteText;
+    [Header("Note Display")]
+    [SerializeField] private UITweener notePanel;
+    [SerializeField] private Sprite normalNoteBg;
+    [SerializeField] private Sprite mirrorNoteBg;
+    [SerializeField] private TextMeshProUGUI noteText;
+    [SerializeField] private Image noteBackground;
+
+    [Header("Player")]
     public FPSController playerController;
 
     private void Update()
@@ -31,8 +38,13 @@ public class GameManager : MonoBehaviour
             HideNote();
     }
 
-    public void DisplayNote(string noteDescription)
+    public void DisplayNote(string noteDescription, bool isMirror)
     {
+        if (isMirror)
+            noteBackground.sprite = mirrorNoteBg;
+        else
+            noteBackground.sprite = normalNoteBg;
+
         playerController.canWalk = false;
         noteText.SetText(noteDescription);
         Cursor.visible = true;

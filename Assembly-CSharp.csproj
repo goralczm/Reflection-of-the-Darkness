@@ -112,14 +112,16 @@
     <Compile Include="Assets\Imported\Scripts\Demo\Spawner.cs" />
     <Compile Include="Assets\Scripts\EnemyAi.cs" />
     <Compile Include="Assets\Scripts\Interactable\Interactable.cs" />
+    <Compile Include="Assets\Scripts\Save System\SettingsData.cs" />
     <Compile Include="Assets\Imported\LeanTween\Framework\LTDescrOptional.cs" />
     <Compile Include="Assets\Imported\Scripts\Core\Portal.cs" />
     <Compile Include="Assets\Imported\LeanTween\Examples\Scripts\GeneralEasingTypes.cs" />
+    <Compile Include="Assets\Scripts\Managers\SettingsMenu.cs" />
     <Compile Include="Assets\Imported\LeanTween\Examples\Scripts\GeneralSequencer.cs" />
     <Compile Include="Assets\Imported\LeanTween\Examples\Archived\OldGUIExamplesCS.cs" />
     <Compile Include="Assets\Imported\LeanTween\Examples\Scripts\GeneralBasic.cs" />
+    <Compile Include="Assets\Scripts\Save System\SaveSystem.cs" />
     <Compile Include="Assets\Imported\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
-    <Compile Include="Assets\Scripts\Interactable\NotePickup.cs" />
     <Compile Include="Assets\Imported\LeanTween\Examples\Scripts\Following.cs" />
     <Compile Include="Assets\Scripts\UI\InventorySlot.cs" />
   </ItemGroup>
@@ -148,6 +150,7 @@
     <None Include="Assets\Imported\Scripts\Demo\Shaders\CloudTest.shader" />
     <None Include="Assets\Imported\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />
     <None Include="Assets\Imported\Scripts\Demo\Shaders\SkyDome.shader" />
+    <None Include="Assets\Fonts\License.txt" />
     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />

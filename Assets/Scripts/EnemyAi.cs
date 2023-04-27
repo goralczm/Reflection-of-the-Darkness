@@ -7,13 +7,22 @@ public class EnemyAi : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent _agent;
     [SerializeField] private Transform _target;
+    [SerializeField] private float _detectionRange;
 
     private void Update()
     {
-        _agent.SetDestination(_target.position);
         float distanceBtwTarget = Vector3.Distance(transform.position, _target.position);
+
+        if (distanceBtwTarget <= _detectionRange)
+            _agent.SetDestination(_target.position);
 
         //if (distanceBtwTarget <= _agent.stoppingDistance)
             //TransitionManager.instance.ResetLevel();
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, _detectionRange);
     }
 }

@@ -53,7 +53,7 @@ public class InventorySlot : MonoBehaviour
         _itemIconRect.anchoredPosition = _startOffset + _activeOffset;
         if (item.description != "")
         {
-            GameManager.instance.DisplayNote(item.description);
+            GameManager.instance.DisplayNote(item.description, item.mirror);
             DeselectSlot();
         }
     }
