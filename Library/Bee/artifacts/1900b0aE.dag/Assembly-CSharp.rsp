@@ -414,6 +414,7 @@
 "Assets/Scripts/Managers/TransitionManager.cs"
 "Assets/Scripts/Save System/SaveSystem.cs"
 "Assets/Scripts/Save System/SettingsData.cs"
+"Assets/Scripts/SoundTrigger.cs"
 "Assets/Scripts/Templates/Item.cs"
 "Assets/Scripts/Templates/NPC.cs"
 "Assets/Scripts/Templates/Recipe.cs"

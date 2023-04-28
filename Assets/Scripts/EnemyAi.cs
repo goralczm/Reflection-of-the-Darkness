@@ -14,7 +14,18 @@ public class EnemyAi : MonoBehaviour
         float distanceBtwTarget = Vector3.Distance(transform.position, _target.position);
 
         if (distanceBtwTarget <= _detectionRange)
+        {
+            _agent.isStopped = false;
             _agent.SetDestination(_target.position);
+            AudioManager.instance.StopFromGroup("Music", "theme");
+            AudioManager.instance.PlayOnceFromGroup("Music", "chase");
+        }
+        else
+        {
+            _agent.isStopped = true;
+            AudioManager.instance.StopFromGroup("Music", "chase");
+            AudioManager.instance.PlayOnceFromGroup("Music", "theme");
+        }
 
         //if (distanceBtwTarget <= _agent.stoppingDistance)
             //TransitionManager.instance.ResetLevel();

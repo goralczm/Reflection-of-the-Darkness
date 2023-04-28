@@ -13,8 +13,6 @@ public class SettingsMenu : MonoBehaviour
     public Slider[] musicSliders;
     public Slider[] sfxSliders;
 
-    [SerializeField] private GameObject pcSettings;
-    [SerializeField] private GameObject mobileSettings;
     [SerializeField] private GameObject confirmPopup;
     [SerializeField] private TextMeshProUGUI timerText;
 
@@ -34,15 +32,6 @@ public class SettingsMenu : MonoBehaviour
         _audioManager = AudioManager.instance;
         if (_audioManager == null)
             Debug.LogWarning("Audio Manager not found!");
-
-        mobileSettings.SetActive(false);
-        pcSettings.SetActive(true);
-
-        if (Application.isMobilePlatform)
-        {
-            pcSettings.SetActive(false);
-            mobileSettings.SetActive(true);
-        }
 
         resolutions = Screen.resolutions;
 
@@ -103,7 +92,7 @@ public class SettingsMenu : MonoBehaviour
         confirmPopup.SetActive(false);
     }
 
-    private void SetOldResolution()
+    public void SetOldResolution()
     {
         ConfirmSelection();
         ChangeResolutionValue(oldResolutionIndex);

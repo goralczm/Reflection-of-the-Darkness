@@ -34,9 +34,12 @@ public class FPSController : PortalTraveller
 
     bool jumping;
     float lastGroundedTime;
+    float footstepTimer;
+    private AudioManager _audioManager;
 
     void Start()
     {
+        _audioManager = AudioManager.instance;
         cam = Camera.main;
         if (lockCursor)
         {
@@ -63,6 +66,12 @@ public class FPSController : PortalTraveller
         Vector3 worldInputDir = transform.TransformDirection(inputDir);
 
         float currentSpeed = (Input.GetKey(KeyCode.LeftShift)) ? runSpeed : walkSpeed;
+        if (input != Vector2.zero && footstepTimer <= 0)
+        {
+            _audioManager.PlayRandomFootstep("Footsteps_Dirt");
+            footstepTimer = (float)(currentSpeed / 2) - (float)(currentSpeed - walkSpeed) / 1.25f;
+        }
+        footstepTimer -= Time.deltaTime;
         Vector3 targetVelocity = worldInputDir * currentSpeed;
         velocity = Vector3.SmoothDamp(velocity, targetVelocity, ref smoothV, smoothMoveTime);
 

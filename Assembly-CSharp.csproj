@@ -124,6 +124,7 @@
     <Compile Include="Assets\Imported\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
     <Compile Include="Assets\Imported\LeanTween\Examples\Scripts\Following.cs" />
     <Compile Include="Assets\Scripts\UI\InventorySlot.cs" />
+    <Compile Include="Assets\Scripts\SoundTrigger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -143,7 +144,6 @@
     <None Include="Assets\Imported\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\Music\Mystery 3 OGG files\public-license.txt" />
     <None Include="Assets\Imported\Scripts\Core\Shaders\Slice.shader" />
     <None Include="Assets\Imported\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Imported\Models\Car\License.txt" />

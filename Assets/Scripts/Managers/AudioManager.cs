@@ -1,6 +1,7 @@
+using System.Collections.Generic;
+using System.Collections;
 using UnityEngine.Audio;
 using UnityEngine;
-using System;
 
 [System.Serializable]
 public class Sound
@@ -20,6 +21,14 @@ public class Sound
     public AudioSource source;
 }
 
+[System.Serializable]
+public class SoundGroup
+{
+    public string name;
+    public List<Sound> sounds;
+    public AudioMixerGroup mixerGroup;
+}
+
 
 public class AudioManager : MonoBehaviour
 {
@@ -31,72 +40,192 @@ public class AudioManager : MonoBehaviour
 
     public AudioMixer masterMixer;
 
-    [SerializeField] private AudioMixerGroup SFXGroup;
+    public Dictionary<string, List<Sound>> soundGroupsDict;
+    [SerializeField] private float crossfadeSpeed;
+
+    [SerializeField] private AudioMixerGroup sfxGroup;
     [SerializeField] private AudioMixerGroup musicGroup;
-    [SerializeField] private Sound[] sounds;
-    [SerializeField] private Sound[] themes;
+    [SerializeField] private List<SoundGroup> soundGroups;
+    //[SerializeField] private List<Sound> sounds;
+    //[SerializeField] private List<Sound> themes;
+    //[SerializeField] private List<SoundGroup> footsteps;
+
+    private Sound currMusic;
+    private List<Sound> currStoppingSounds;
 
     private void Awake()
     {
+        currStoppingSounds = new List<Sound>();
+        soundGroupsDict = new Dictionary<string, List<Sound>>();
         instance = this;
 
-        foreach (Sound sound in sounds)
+        foreach (SoundGroup group in soundGroups)
         {
-            CreateSound(sound, SFXGroup);
+            foreach (Sound sound in group.sounds)
+            {
+                CreateSound(sound, group.mixerGroup);
+            }
+            soundGroupsDict.Add(group.name, group.sounds);
         }
+
+        /*foreach (Sound sound in sounds)
+        {
+            CreateSound(sound, sfxGroup);
+        }
+        soundGroupsDict.Add("sfx", sounds);
 
         foreach (Sound theme in themes)
         {
             CreateSound(theme, musicGroup);
         }
+        soundGroupsDict.Add("music", themes);*/
+
+        /*foreach (SoundGroup footstepGroup in footsteps)
+        {
+            foreach (Sound footstep in footstepGroup.sounds)
+            {
+                CreateSound(footstep, sfxGroup);
+            }
+            soundGroupsDict.Add(footstepGroup.name, footstepGroup.sounds);
+        }*/
     }
 
     private void Start()
     {
-        if (themes.Length > 0)
-            themes[0].source.Play();
+        if (soundGroupsDict["Music"].Count > 0)
+            soundGroupsDict["Music"][0].source.Play();
     }
 
-    private Sound FindSound(string name)
+    private void Update()
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null)
+        #region Starting Sounds
+        foreach (SoundGroup soundGroup in soundGroups)
         {
-            Debug.LogError("Sound: " + name + " not found!");
+            foreach (Sound sound in soundGroup.sounds)
+            {
+                if (currStoppingSounds.Contains(sound))
+                    continue;
+
+                if (sound.source.isPlaying && sound.source.volume < sound.volume)
+                {
+                    sound.source.volume += Time.deltaTime * crossfadeSpeed;
+                    sound.source.volume = Mathf.Clamp(sound.source.volume, 0, sound.volume);
+                }
+            }
+        }
+        #endregion
+
+        #region Stopping Sounds
+        List<Sound> stoppedSounds = new List<Sound>();
+        for (int i = 0; i < currStoppingSounds.Count; i++)
+        {
+            currStoppingSounds[i].source.volume -= Time.deltaTime * crossfadeSpeed;
+            if (currStoppingSounds[i].source.volume <= 0)
+            {
+                currStoppingSounds[i].source.Stop();
+                stoppedSounds.Add(currStoppingSounds[i]);
+            }
+        }
+
+        for (int i = 0; i < stoppedSounds.Count; i++)
+        {
+            currStoppingSounds.Remove(stoppedSounds[i]);
+        }
+        #endregion
+    }
+
+    private Sound FindSound(string group, string name)
+    {
+        if (!soundGroupsDict.ContainsKey(group))
+        {
+            Debug.LogError("Sound group: " + group + " not found!");
             return null;
         }
 
-        return s;
+        foreach (Sound sound in soundGroupsDict[group])
+        {
+            if (sound.name == name)
+                return sound;
+        }
+
+        Debug.LogError("Sound: " + name + " not found!");
+        return null;
     }
 
-    public void Play(string name)
+    public void PlayRandomFootstep(string group)
     {
-        Sound s = FindSound(name);
+        if (!soundGroupsDict.ContainsKey(group))
+        {
+            Debug.LogError("Sound group: " + group + " not found!");
+            return;
+        }
+
+        List<Sound> footstepSounds = soundGroupsDict[group];
+        int randomSoundIndex = Random.Range(0, footstepSounds.Count);
+
+        PlayFromGroup(group, footstepSounds[randomSoundIndex].name, footstepSounds[randomSoundIndex].volume);
+    }
+
+    public void PlaySound(string name)
+    {
+        Sound s = FindSound("sfx", name);
         if (s == null)
             return;
 
         s.source.Play();
     }
 
-    public void PlayOnce(string name)
+    public void PlayFromGroup(string group, string name, float defaultVolume)
     {
-        Sound s = FindSound(name);
+        if (!soundGroupsDict.ContainsKey(group))
+        {
+            Debug.LogError("Sound group: " + group + " not found!");
+            return;
+        }
+
+        Sound s = FindSound(group, name);
+        if (s == null)
+            return;
+
+        s.source.volume = defaultVolume;
+        s.source.Play();
+    }
+
+    public void PlayOnceFromGroup(string group, string name)
+    {
+        if (!soundGroupsDict.ContainsKey(group))
+        {
+            Debug.LogError("Sound group: " + group + " not found!");
+            return;
+        }
+
+        Sound s = FindSound(group, name);
         if (s == null)
             return;
 
         if (s.source.isPlaying)
             return;
 
+        s.source.volume = 0f;
         s.source.Play();
     }
 
-    public void Stop(string name)
+    public void StopFromGroup(string group, string name)
     {
-        Sound s = FindSound(name);
+        if (!soundGroupsDict.ContainsKey(group))
+        {
+            Debug.LogError("Sound group: " + group + " not found!");
+            return;
+        }
+
+        Sound s = FindSound(group, name);
         if (s == null)
             return;
 
-        s.source.Stop();
+        if (currStoppingSounds.Contains(s))
+            return;
+
+        currStoppingSounds.Add(s);
     }
 
     private void CreateSound(Sound sound, AudioMixerGroup mixerGroup)
