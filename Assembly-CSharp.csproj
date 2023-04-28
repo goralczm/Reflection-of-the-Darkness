@@ -110,6 +110,7 @@
     <Compile Include="Assets\Scripts\Interactable\NPCInteract.cs" />
     <Compile Include="Assets\Imported\LeanTween\Examples\Scripts\PathBezier2d.cs" />
     <Compile Include="Assets\Imported\Scripts\Demo\Spawner.cs" />
+    <Compile Include="Assets\Scripts\SoundTrigger.cs" />
     <Compile Include="Assets\Scripts\EnemyAi.cs" />
     <Compile Include="Assets\Scripts\Interactable\Interactable.cs" />
     <Compile Include="Assets\Scripts\Save System\SettingsData.cs" />
@@ -124,7 +125,7 @@
     <Compile Include="Assets\Imported\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
     <Compile Include="Assets\Imported\LeanTween\Examples\Scripts\Following.cs" />
     <Compile Include="Assets\Scripts\UI\InventorySlot.cs" />
-    <Compile Include="Assets\Scripts\SoundTrigger.cs" />
+    <Compile Include="Assets\Scripts\EndScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -27,7 +27,10 @@ public class EnemyAi : MonoBehaviour
             AudioManager.instance.PlayOnceFromGroup("Music", "theme");
         }
 
-        //if (distanceBtwTarget <= _agent.stoppingDistance)
+        /*if (distanceBtwTarget <= _agent.stoppingDistance)
+        {
+            EndScreen.instance.endScreenPanel.Show();
+        }*/
             //TransitionManager.instance.ResetLevel();
     }
 

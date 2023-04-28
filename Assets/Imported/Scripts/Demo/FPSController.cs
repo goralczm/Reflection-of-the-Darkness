@@ -7,6 +7,7 @@ public class FPSController : PortalTraveller
     public bool lockYCamera;
     public bool canJump;
     public bool canWalk;
+    public string _footstepGroup;
 
     public float walkSpeed = 3;
     public float runSpeed = 6;
@@ -68,7 +69,7 @@ public class FPSController : PortalTraveller
         float currentSpeed = (Input.GetKey(KeyCode.LeftShift)) ? runSpeed : walkSpeed;
         if (input != Vector2.zero && footstepTimer <= 0)
         {
-            _audioManager.PlayRandomFootstep("Footsteps_Dirt");
+            _audioManager.PlayRandomFootstep(_footstepGroup);
             footstepTimer = (float)(currentSpeed / 2) - (float)(currentSpeed - walkSpeed) / 1.25f;
         }
         footstepTimer -= Time.deltaTime;
@@ -110,17 +111,17 @@ public class FPSController : PortalTraveller
         
         if (canWalk)
             yaw += mX * mouseSensitivity;
-        pitch -= mY * mouseSensitivity;
+        //pitch -= mY * mouseSensitivity;
 
-        if (lockYCamera)
-            pitch = cam.transform.localEulerAngles.x;
+        //if (lockYCamera)
+            //pitch = cam.transform.localEulerAngles.x;
 
-        pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
-        smoothPitch = Mathf.SmoothDampAngle(smoothPitch, pitch, ref pitchSmoothV, rotationSmoothTime);
+        //pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
+        //smoothPitch = Mathf.SmoothDampAngle(smoothPitch, pitch, ref pitchSmoothV, rotationSmoothTime);
         smoothYaw = Mathf.SmoothDampAngle(smoothYaw, yaw, ref yawSmoothV, rotationSmoothTime);
 
         transform.eulerAngles = Vector3.up * smoothYaw;
-        cam.transform.localEulerAngles = Vector3.right * smoothPitch;
+        //cam.transform.localEulerAngles = Vector3.right * smoothPitch;
 
     }
 

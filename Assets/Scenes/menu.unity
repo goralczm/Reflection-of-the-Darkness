@@ -13838,23 +13838,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masterMixer: {fileID: 24100000, guid: 375efcf30d05cec4893c973932fd5c7b, type: 2}
+  crossfadeSpeed: 0
   sfxGroup: {fileID: -402089693853818369, guid: 375efcf30d05cec4893c973932fd5c7b, type: 2}
   musicGroup: {fileID: -7169710007495244955, guid: 375efcf30d05cec4893c973932fd5c7b, type: 2}
-  sounds:
-  - name: play
-    clip: {fileID: 8300000, guid: ef24be5648ccb77458cc35a7ede3974b, type: 3}
-    volume: 0.3
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  themes:
-  - name: theme
-    clip: {fileID: 8300000, guid: c9dd9bc132973394d82eecafadc08793, type: 3}
-    volume: 0.3
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  footsteps: []
+  soundGroups:
+  - name: Music
+    sounds:
+    - name: theme
+      clip: {fileID: 8300000, guid: c9dd9bc132973394d82eecafadc08793, type: 3}
+      volume: 0.3
+      pitch: 1
+      loop: 1
+      source: {fileID: 0}
+    mixerGroup: {fileID: -7169710007495244955, guid: 375efcf30d05cec4893c973932fd5c7b, type: 2}
+  - name: Sounds
+    sounds:
+    - name: play
+      clip: {fileID: 8300000, guid: ef24be5648ccb77458cc35a7ede3974b, type: 3}
+      volume: 0.3
+      pitch: 1
+      loop: 0
+      source: {fileID: 0}
+    mixerGroup: {fileID: -402089693853818369, guid: 375efcf30d05cec4893c973932fd5c7b, type: 2}
 --- !u!4 &1736473004
 Transform:
   m_ObjectHideFlags: 0
