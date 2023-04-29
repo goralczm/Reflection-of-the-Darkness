@@ -21,6 +21,13 @@ public class EndScreen : MonoBehaviour
 
     public void ShowEndscreen()
     {
+        endScreenPanel.Show();
+    }
+
+    public void ShowPanel()
+    {
         panel.Show();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -41,9 +42,10 @@ public class DialogueManager : MonoBehaviour
     private float _timeElapsedFromStart;
     private float _timeElapsedFromEnd = .1f;
 
+    private UnityEvent _onEndDialogueEvents;
     private void Start()
     {
-        _dialoguePanel.gameObject.SetActive(false);
+        //_dialoguePanel.gameObject.SetActive(false);
 
         choicesTexts = new TextMeshProUGUI[choices.Length];
         for (int i = 0; i < choices.Length; i++)
@@ -65,6 +67,9 @@ public class DialogueManager : MonoBehaviour
 
         _timeElapsedFromStart += Time.deltaTime;
 
+        if (_playerMovement == null)
+            return;
+
         Vector3 dir = _currTarget.position - _playerMovement.transform.position;
         float targetYRot = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
         _playerMovement.yaw = targetYRot;
@@ -75,21 +80,25 @@ public class DialogueManager : MonoBehaviour
         _dialoguePanel.Show();
     }
 
-    public void EnterDialogueMode(TextAsset newDialogueJSON, Transform newTarget)
+    public void EnterDialogueMode(TextAsset newDialogueJSON, Transform newTarget, UnityEvent newOnEndDialogueEvents)
     {
         if (_timeElapsedFromEnd < .1f)
             return;
 
-        GameManager.instance.HideNote();
+        _onEndDialogueEvents = newOnEndDialogueEvents;
+        if (GameManager.instance != null)
+            GameManager.instance.HideNote();
         CancelInvoke();
         StopAllCoroutines();
         _currTarget = newTarget;
         _currDialogue = new Story(newDialogueJSON.text);
         _timeElapsedFromStart = 0;
-        _playerMovement.canWalk = false;
+        if (_playerMovement != null)
+            _playerMovement.canWalk = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         ShowPanel();
+        _dialoguePanel.objectToAnimate.SetActive(true);
         dialogueIsPlaying = true;
         NextDialogue();
     }
@@ -109,9 +118,11 @@ public class DialogueManager : MonoBehaviour
 
     private void ExitDialogueMode()
     {
-        Debug.Log("Exiting");
+        if (_onEndDialogueEvents != null)
+            _onEndDialogueEvents.Invoke();
         _dialogueText.SetText("");
-        _playerMovement.canWalk = true;
+        if (_playerMovement != null)
+            _playerMovement.canWalk = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         _timeElapsedFromEnd = 0;

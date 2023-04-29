@@ -12726,7 +12726,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _npc: {fileID: 11400000, guid: 1f8d258a5a40d5949ad924a22656885e, type: 2}
-  _mirrored: 0
 --- !u!114 &1360655978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15436,7 +15435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8416131180001841111, guid: 3d180273fbd0a3a41ab9bdbae751bf65, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: scene1
+      value: intro_sequence
       objectReference: {fileID: 0}
     - target: {fileID: 8416131180001841111, guid: 3d180273fbd0a3a41ab9bdbae751bf65, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

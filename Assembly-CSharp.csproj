@@ -112,6 +112,7 @@
     <Compile Include="Assets\Imported\Scripts\Demo\Spawner.cs" />
     <Compile Include="Assets\Scripts\SoundTrigger.cs" />
     <Compile Include="Assets\Scripts\EnemyAi.cs" />
+    <Compile Include="Assets\Scripts\EndScreen.cs" />
     <Compile Include="Assets\Scripts\Interactable\Interactable.cs" />
     <Compile Include="Assets\Scripts\Save System\SettingsData.cs" />
     <Compile Include="Assets\Imported\LeanTween\Framework\LTDescrOptional.cs" />
@@ -125,7 +126,9 @@
     <Compile Include="Assets\Imported\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
     <Compile Include="Assets\Imported\LeanTween\Examples\Scripts\Following.cs" />
     <Compile Include="Assets\Scripts\UI\InventorySlot.cs" />
-    <Compile Include="Assets\Scripts\EndScreen.cs" />
+    <Compile Include="Assets\Scripts\IntroSequence.cs" />
+    <Compile Include="Assets\Scripts\OpenGate.cs" />
+    <Compile Include="Assets\Scripts\ShowEndScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMPro.cginc" />

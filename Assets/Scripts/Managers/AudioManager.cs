@@ -168,7 +168,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySound(string name)
     {
-        Sound s = FindSound("sfx", name);
+        Sound s = FindSound("Sounds", name);
         if (s == null)
             return;
 

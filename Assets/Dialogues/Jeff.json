@@ -1,0 +1,1 @@
+﻿{"inkVersion":20,"root":[["^Damn, what do you want from me?","\n","ev","str","^I need a ticket","/str","/ev",{"*":"0.c-0","flg":4},{"c-0":["\n","^They're over. Get lost!","\n",{"->":"0.g-0"},{"#f":5}],"g-0":["done",{"#f":5}]}],"done",{"#f":1}],"listDefs":{}}

@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class NPCInteract : Interactable
 {
     [SerializeField] private NPC _npc;
-    [SerializeField] private bool _mirrored;
+    [SerializeField] private UnityEvent _onEndDialogueEvents;
 
     private DialogueManager _dialogueManager;
 
@@ -20,7 +21,7 @@ public class NPCInteract : Interactable
         if (!_dialogueManager.dialogueIsPlaying)
         {
             Debug.Log("Talking with " + _npc.name);
-            _dialogueManager.EnterDialogueMode(_npc.dialogue, transform);
+            _dialogueManager.EnterDialogueMode(_npc.dialogue, transform, _onEndDialogueEvents);
         }
     }
 }
