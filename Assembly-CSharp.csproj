@@ -84,7 +84,9 @@
     <Compile Include="Assets\Imported\LeanTween\Examples\Scripts\PathSpline.cs" />
     <Compile Include="Assets\Scripts\Managers\Inventory.cs" />
     <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\OpenGate.cs" />
     <Compile Include="Assets\Scripts\Interactable\PlayerInteract.cs" />
+    <Compile Include="Assets\Scripts\IntroSequence.cs" />
     <Compile Include="Assets\Scripts\Templates\NPC.cs" />
     <Compile Include="Assets\Imported\LeanTween\Examples\Scripts\GeneralAdvancedTechniques.cs" />
     <Compile Include="Assets\Imported\LeanTween\Framework\LeanSmooth.cs" />
@@ -123,12 +125,12 @@
     <Compile Include="Assets\Imported\LeanTween\Examples\Archived\OldGUIExamplesCS.cs" />
     <Compile Include="Assets\Imported\LeanTween\Examples\Scripts\GeneralBasic.cs" />
     <Compile Include="Assets\Scripts\Save System\SaveSystem.cs" />
+    <Compile Include="Assets\Scripts\ShowEndScreen.cs" />
     <Compile Include="Assets\Imported\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
     <Compile Include="Assets\Imported\LeanTween\Examples\Scripts\Following.cs" />
     <Compile Include="Assets\Scripts\UI\InventorySlot.cs" />
-    <Compile Include="Assets\Scripts\IntroSequence.cs" />
-    <Compile Include="Assets\Scripts\OpenGate.cs" />
-    <Compile Include="Assets\Scripts\ShowEndScreen.cs" />
+    <Compile Include="Assets\Scripts\CheckpointManager.cs" />
+    <Compile Include="Assets\Scripts\Checkpoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMPro.cginc" />

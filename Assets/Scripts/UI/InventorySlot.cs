@@ -54,6 +54,7 @@ public class InventorySlot : MonoBehaviour
         if (item.description != "")
         {
             GameManager.instance.DisplayNote(item.description, item.mirror);
+            AudioManager.instance.PlaySound("search");
             DeselectSlot();
         }
     }

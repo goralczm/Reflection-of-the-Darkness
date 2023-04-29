@@ -398,6 +398,8 @@
 "Assets/Imported/Scripts/Demo/FPSController.cs"
 "Assets/Imported/Scripts/Demo/PortalPhysicsObject.cs"
 "Assets/Imported/Scripts/Demo/Spawner.cs"
+"Assets/Scripts/Checkpoint.cs"
+"Assets/Scripts/CheckpointManager.cs"
 "Assets/Scripts/EndScreen.cs"
 "Assets/Scripts/EnemyAi.cs"
 "Assets/Scripts/Interactable/Interactable.cs"

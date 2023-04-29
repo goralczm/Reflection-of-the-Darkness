@@ -67,12 +67,12 @@ public class DialogueManager : MonoBehaviour
 
         _timeElapsedFromStart += Time.deltaTime;
 
-        if (_playerMovement == null)
+        /*if (_playerMovement == null)
             return;
 
         Vector3 dir = _currTarget.position - _playerMovement.transform.position;
         float targetYRot = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
-        _playerMovement.yaw = targetYRot;
+        _playerMovement.yaw = targetYRot;*/
     }
 
     private void ShowPanel()

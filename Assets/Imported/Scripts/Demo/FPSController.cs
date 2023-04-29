@@ -38,8 +38,11 @@ public class FPSController : PortalTraveller
     float footstepTimer;
     private AudioManager _audioManager;
 
+    private float yawSpeed = 100f;
+
     void Start()
     {
+        yawSpeed = 100f;
         _audioManager = AudioManager.instance;
         cam = Camera.main;
         if (lockCursor)
@@ -97,7 +100,7 @@ public class FPSController : PortalTraveller
             }
         }
 
-        float mX = Input.GetAxisRaw("HorizontalArrow");
+        /*float mX = Input.GetAxisRaw("HorizontalArrow");
 
         float mY = Input.GetAxisRaw("Mouse Y");
 
@@ -107,10 +110,10 @@ public class FPSController : PortalTraveller
         {
             mX = 0;
             mY = 0;
-        }
+        }*/
         
-        if (canWalk)
-            yaw += mX * mouseSensitivity;
+        //if (canWalk)
+            //yaw += mX * mouseSensitivity;
         //pitch -= mY * mouseSensitivity;
 
         //if (lockYCamera)
@@ -118,9 +121,9 @@ public class FPSController : PortalTraveller
 
         //pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
         //smoothPitch = Mathf.SmoothDampAngle(smoothPitch, pitch, ref pitchSmoothV, rotationSmoothTime);
-        smoothYaw = Mathf.SmoothDampAngle(smoothYaw, yaw, ref yawSmoothV, rotationSmoothTime);
+        //smoothYaw = Mathf.SmoothDampAngle(smoothYaw, yaw, ref yaw, rotationSmoothTime);
 
-        transform.eulerAngles = Vector3.up * smoothYaw;
+        //transform.eulerAngles = Vector3.up * smoothYaw;
         //cam.transform.localEulerAngles = Vector3.right * smoothPitch;
 
     }
@@ -135,5 +138,13 @@ public class FPSController : PortalTraveller
         transform.eulerAngles = Vector3.up * smoothYaw;
         velocity = toPortal.TransformVector(fromPortal.InverseTransformVector(velocity));
         Physics.SyncTransforms();
+    }
+
+    public void SetupCharacter(Vector3 newPos, Vector3 newRot)
+    {
+        transform.position = newPos;
+        transform.eulerAngles = newRot;
+        enabled = true;
+        GetComponent<CharacterController>().enabled = true;
     }
 }
