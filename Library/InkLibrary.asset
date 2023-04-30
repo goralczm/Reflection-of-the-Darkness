@@ -10,9 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc234ab28a32840f5adfb84a075bc023, type: 3}
-  m_Name: 
+  m_Name: Ink Library 1.0.0
   m_EditorClassIdentifier: 
   inkLibrary:
+  - compileAutomatically: 0
+    inkAsset: {fileID: 102900000, guid: 19190af78619bc44680c28b3990289ee, type: 3}
+    jsonAssetDirectory: {fileID: 0}
+    jsonAsset: {fileID: 4900000, guid: b56eb93b5af43ac41bcede35fa54936a, type: 3}
+    unhandledCompileErrors: []
+    errors: []
+    warnings: []
+    todos: []
+    parents: []
+    masterInkAssets: []
+    masterInkAsset: {fileID: 0}
+    includePaths: []
+    includes: []
+  - compileAutomatically: 0
+    inkAsset: {fileID: 102900000, guid: 8affbaef73a9b52458e18d1db66602d9, type: 3}
+    jsonAssetDirectory: {fileID: 0}
+    jsonAsset: {fileID: 4900000, guid: 018a725045dcd3d4cb6cf54fb41e999d, type: 3}
+    unhandledCompileErrors: []
+    errors: []
+    warnings: []
+    todos: []
+    parents: []
+    masterInkAssets: []
+    masterInkAsset: {fileID: 0}
+    includePaths: []
+    includes: []
   - compileAutomatically: 0
     inkAsset: {fileID: 102900000, guid: 8bdc865bd5e17dc44aca8c0a12656757, type: 3}
     jsonAssetDirectory: {fileID: 0}
@@ -82,6 +108,45 @@ MonoBehaviour:
     inkAsset: {fileID: 102900000, guid: 38438c1ef7c833143900a8ab179ea7cf, type: 3}
     jsonAssetDirectory: {fileID: 0}
     jsonAsset: {fileID: 4900000, guid: 7ea88ee571787b743bc7cc54975567fa, type: 3}
+    unhandledCompileErrors: []
+    errors: []
+    warnings: []
+    todos: []
+    parents: []
+    masterInkAssets: []
+    masterInkAsset: {fileID: 0}
+    includePaths: []
+    includes: []
+  - compileAutomatically: 0
+    inkAsset: {fileID: 102900000, guid: 4450a52c7f141c843aee2cf36c682b32, type: 3}
+    jsonAssetDirectory: {fileID: 0}
+    jsonAsset: {fileID: 4900000, guid: 8c6c0c13e39d38f4c9caec789fb55519, type: 3}
+    unhandledCompileErrors: []
+    errors: []
+    warnings: []
+    todos: []
+    parents: []
+    masterInkAssets: []
+    masterInkAsset: {fileID: 0}
+    includePaths: []
+    includes: []
+  - compileAutomatically: 0
+    inkAsset: {fileID: 102900000, guid: cad1c79657d2a8849b39c472ef243747, type: 3}
+    jsonAssetDirectory: {fileID: 0}
+    jsonAsset: {fileID: 4900000, guid: 16cfd2f3afc7a0a4895b53d92949de2a, type: 3}
+    unhandledCompileErrors: []
+    errors: []
+    warnings: []
+    todos: []
+    parents: []
+    masterInkAssets: []
+    masterInkAsset: {fileID: 0}
+    includePaths: []
+    includes: []
+  - compileAutomatically: 0
+    inkAsset: {fileID: 102900000, guid: b4d86f4624fa1264a9c6107a7ad85fab, type: 3}
+    jsonAssetDirectory: {fileID: 0}
+    jsonAsset: {fileID: 4900000, guid: c8fa09856da3d8d40bb0389ec2440192, type: 3}
     unhandledCompileErrors: []
     errors: []
     warnings: []

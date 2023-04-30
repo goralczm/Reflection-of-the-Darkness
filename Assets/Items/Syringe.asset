@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Syringe
   description: 
-  icon: {fileID: 21300000, guid: 231e07641a68e634d9d3471234f59e5a, type: 3}
+  icon: {fileID: 21300000, guid: f977fa164f484bf42851c4dc90427f17, type: 3}
+  mirror: 0

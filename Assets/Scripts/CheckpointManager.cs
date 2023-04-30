@@ -10,7 +10,10 @@ public class CheckpointManager : MonoBehaviour
     private void Start()
     {
         if (checkpoints.Count == 0)
+        {
+            _player.SetupCharacter(_player.transform.position, _player.transform.eulerAngles);
             return;
+        }
 
         LoadCheckpoint();
     }

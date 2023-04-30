@@ -53,4 +53,16 @@ public class TransitionManager : MonoBehaviour
     {
         isChangingScene = false;
     }
+
+    public void Blink(float time)
+    {
+        StartCoroutine(BlinkRoutine(time));
+    }
+
+    IEnumerator BlinkRoutine(float time)
+    {
+        _anim.Play("out_black");
+        yield return new WaitForSeconds(time);
+        _anim.Play("in");
+    }
 }

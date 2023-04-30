@@ -22,8 +22,8 @@ public class Portal : MonoBehaviour {
 
     void Awake () {
         playerCam = Camera.main;
-        portalCam = GetComponentInChildren<Camera> ();
-        portalCam.enabled = false;
+        //portalCam = GetComponentInChildren<Camera> ();
+        //portalCam.enabled = false;
         trackedTravellers = new List<PortalTraveller> ();
         screenMeshFilter = screen.GetComponent<MeshFilter> ();
         screen.material.SetInt ("displayMask", 1);
@@ -63,7 +63,7 @@ public class Portal : MonoBehaviour {
     }
 
     // Called before any portal cameras are rendered for the current frame
-    public void PrePortalRender () {
+    /*public void PrePortalRender () {
         foreach (var traveller in trackedTravellers) {
             UpdateSliceParams (traveller);
         }
@@ -269,7 +269,7 @@ public class Portal : MonoBehaviour {
         } else {
             portalCam.projectionMatrix = playerCam.projectionMatrix;
         }
-    }
+    }*/
 
     void OnTravellerEnterPortal (PortalTraveller traveller) {
         if (!trackedTravellers.Contains (traveller)) {

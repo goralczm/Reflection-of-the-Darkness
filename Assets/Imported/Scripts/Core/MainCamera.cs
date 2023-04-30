@@ -2,7 +2,7 @@
 
 public class MainCamera : MonoBehaviour {
 
-    Portal[] portals;
+    /*Portal[] portals;
 
     void Awake () {
         portals = FindObjectsOfType<Portal> ();
@@ -21,6 +21,6 @@ public class MainCamera : MonoBehaviour {
             portals[i].PostPortalRender ();
         }
 
-    }
+    }*/
 
 }

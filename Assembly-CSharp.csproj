@@ -70,6 +70,7 @@
     <Compile Include="Assets\Imported\LeanTween\Examples\Archived\TestingPunch.cs" />
     <Compile Include="Assets\Imported\LeanTween\Framework\LTSeq.cs" />
     <Compile Include="Assets\Imported\Scripts\Demo\Car.cs" />
+    <Compile Include="Assets\Scripts\Checkpoint.cs" />
     <Compile Include="Assets\Scripts\Interactable\ItemPickup.cs" />
     <Compile Include="Assets\Imported\LeanTween\Examples\Scripts\GeneralUISpace.cs" />
     <Compile Include="Assets\Scripts\Managers\LookAtTarget.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Assets\Imported\LeanTween\Examples\Scripts\TestingZLegacyExt.cs" />
     <Compile Include="Assets\Imported\LeanTween\Examples\Scripts\PathSplinePerformance.cs" />
     <Compile Include="Assets\Scripts\Interactable\NPCInteract.cs" />
+    <Compile Include="Assets\Scripts\CheckpointManager.cs" />
     <Compile Include="Assets\Imported\LeanTween\Examples\Scripts\PathBezier2d.cs" />
     <Compile Include="Assets\Imported\Scripts\Demo\Spawner.cs" />
     <Compile Include="Assets\Scripts\SoundTrigger.cs" />
@@ -129,8 +131,8 @@
     <Compile Include="Assets\Imported\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
     <Compile Include="Assets\Imported\LeanTween\Examples\Scripts\Following.cs" />
     <Compile Include="Assets\Scripts\UI\InventorySlot.cs" />
-    <Compile Include="Assets\Scripts\CheckpointManager.cs" />
-    <Compile Include="Assets\Scripts\Checkpoint.cs" />
+    <Compile Include="Assets\Scripts\LockPanel.cs" />
+    <Compile Include="Assets\Scripts\Interactable\LockInteract.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Imported\TextMesh Pro\Shaders\TMPro.cginc" />

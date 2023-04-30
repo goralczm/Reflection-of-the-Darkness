@@ -2,22 +2,31 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AudioManager
+    - CameraMovement
+    - Checkpoint
+    - CheckpointManager
     - DialogueManager
+    - EndScreen
     - EnemyAi
     - FPSController
     - FlexibleGridLayout
     - GameManager
+    - IntroSequence
     - Inventory
     - InventorySlot
     - Item
     - ItemPickup
+    - LockPanel
     - LookAtTarget
     - MainCamera
     - NPC
     - NPCInteract
+    - OpenGate
     - PlayerInteract
     - Portal
-    - PortalTraveller
+    - SettingsMenu
+    - ShowEndScreen
+    - SoundTrigger
     - TransitionManager
     - UITweener
     InkEditor.dll:
@@ -43,6 +52,7 @@ ScriptsOnlyBuild:
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
+    - TMPro.TMP_Dropdown
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
@@ -59,9 +69,15 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
+    - UnityEngine.UI.Slider
+    - UnityEngine.UI.Toggle
   serializedClasses:
     Assembly-CSharp:
     - Sound
+    - SoundGroup
     Unity.Postprocessing.Runtime:
     - UnityEngine.Rendering.PostProcessing.AmbientOcclusionModeParameter
     - UnityEngine.Rendering.PostProcessing.AmbientOcclusionQualityParameter
@@ -94,6 +110,9 @@ ScriptsOnlyBuild:
     - TMPro.FontAssetCreationSettings
     - TMPro.KerningTable
     - TMPro.TMP_Character
+    - TMPro.TMP_Dropdown/DropdownEvent
+    - TMPro.TMP_Dropdown/OptionData
+    - TMPro.TMP_Dropdown/OptionDataList
     - TMPro.TMP_FontFeatureTable
     - TMPro.TMP_FontWeightPair
     - TMPro.TMP_GlyphAdjustmentRecord
@@ -121,9 +140,214 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.ColorBlock
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
+    - UnityEngine.UI.ScrollRect/ScrollRectEvent
+    - UnityEngine.UI.Scrollbar/ScrollEvent
+    - UnityEngine.UI.Slider/SliderEvent
     - UnityEngine.UI.SpriteState
+    - UnityEngine.UI.Toggle/ToggleEvent
   methodsToPreserve:
   - assembly: Assembly-CSharp
+    fullTypeName: AudioManager
+    methodName: PlaySound
+  - assembly: Assembly-CSharp
+    fullTypeName: TransitionManager
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: CheckpointManager
+    methodName: ResetCheckpoint
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingsMenu
+    methodName: SaveData
+  - assembly: Assembly-CSharp
+    fullTypeName: UITweener
+    methodName: Hide
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingsMenu
+    methodName: Quit
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingsMenu
+    methodName: LoadData
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingsMenu
+    methodName: ConfirmSelection
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingsMenu
+    methodName: SetOldResolution
+  - assembly: Assembly-CSharp
+    fullTypeName: UITweener
+    methodName: Show
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingsMenu
+    methodName: SetMusicVolume
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingsMenu
+    methodName: SetResolution
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingsMenu
+    methodName: LoadData
+  - assembly: Assembly-CSharp
+    fullTypeName: UITweener
+    methodName: Hide
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingsMenu
+    methodName: SetFullscreen
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingsMenu
+    methodName: SetSFXVolume
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ResetCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: AudioManager
+    methodName: PlaySound
+  - assembly: Assembly-CSharp
+    fullTypeName: UITweener
+    methodName: Hide
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: UnlockMouse
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: LockMouse
+  - assembly: Assembly-CSharp
+    fullTypeName: TransitionManager
+    methodName: ResetLevel
+  - assembly: Assembly-CSharp
+    fullTypeName: TransitionManager
+    methodName: ChangeScene
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: UITweener
+    methodName: Hide
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: DialogueManager
+    methodName: MakeChoice
+  - assembly: Assembly-CSharp
+    fullTypeName: DialogueManager
+    methodName: MakeChoice
+  - assembly: Assembly-CSharp
+    fullTypeName: DialogueManager
+    methodName: MakeChoice
+  - assembly: Assembly-CSharp
+    fullTypeName: DialogueManager
+    methodName: MakeChoice
+  - assembly: Assembly-CSharp
+    fullTypeName: TransitionManager
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: OpenGate
+    methodName: Open
+  - assembly: Assembly-CSharp
+    fullTypeName: AudioManager
+    methodName: PlaySound
+  - assembly: Assembly-CSharp
+    fullTypeName: OpenGate
+    methodName: Open
+  - assembly: Assembly-CSharp
+    fullTypeName: AudioManager
+    methodName: PlaySound
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ResetCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: AudioManager
+    methodName: PlaySound
+  - assembly: Assembly-CSharp
+    fullTypeName: UITweener
+    methodName: Hide
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: UnlockMouse
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: LockMouse
+  - assembly: Assembly-CSharp
+    fullTypeName: TransitionManager
+    methodName: ResetLevel
+  - assembly: Assembly-CSharp
+    fullTypeName: TransitionManager
+    methodName: ChangeScene
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: UITweener
+    methodName: Hide
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
     fullTypeName: DialogueManager
     methodName: MakeChoice
   - assembly: Assembly-CSharp
@@ -138,14 +362,376 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: OpenGate
+    methodName: Open
+  - assembly: Assembly-CSharp
+    fullTypeName: AudioManager
+    methodName: PlaySound
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemyAi
+    methodName: StopChase
+  - assembly: Assembly-CSharp
+    fullTypeName: OpenGate
+    methodName: Open
+  - assembly: Assembly-CSharp
+    fullTypeName: OpenGate
+    methodName: Open
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: GameManager
-    methodName: HideNote
+    fullTypeName: EnemyAi
+    methodName: StartChase
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: TransitionManager
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: CheckpointManager
+    methodName: ResetCheckpoint
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ResetCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: ClickCode
+  - assembly: Assembly-CSharp
+    fullTypeName: AudioManager
+    methodName: PlaySound
+  - assembly: Assembly-CSharp
+    fullTypeName: UITweener
+    methodName: Hide
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: UnlockMouse
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: LockPanel
+    methodName: LockMouse
+  - assembly: Assembly-CSharp
+    fullTypeName: TransitionManager
+    methodName: ResetLevel
+  - assembly: Assembly-CSharp
+    fullTypeName: TransitionManager
+    methodName: ChangeScene
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: UITweener
+    methodName: Hide
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: DialogueManager
+    methodName: MakeChoice
+  - assembly: Assembly-CSharp
+    fullTypeName: DialogueManager
+    methodName: MakeChoice
+  - assembly: Assembly-CSharp
+    fullTypeName: DialogueManager
+    methodName: MakeChoice
+  - assembly: Assembly-CSharp
+    fullTypeName: DialogueManager
+    methodName: MakeChoice
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   sceneClasses:
-    Assets/Scenes/SampleScene.unity:
+    Assets/Scenes/intro_sequence.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1766}
+    - Class: 114
+      Script: {instanceID: 1998}
+    - Class: 114
+      Script: {instanceID: 2160}
+    - Class: 114
+      Script: {instanceID: 2970}
+    - Class: 114
+      Script: {instanceID: 3096}
+    - Class: 114
+      Script: {instanceID: 3106}
+    - Class: 114
+      Script: {instanceID: 3156}
+    - Class: 114
+      Script: {instanceID: 3354}
+    - Class: 114
+      Script: {instanceID: 3552}
+    - Class: 114
+      Script: {instanceID: 3610}
+    - Class: 114
+      Script: {instanceID: 3662}
+    - Class: 114
+      Script: {instanceID: 3734}
+    - Class: 114
+      Script: {instanceID: 4024}
+    - Class: 114
+      Script: {instanceID: 4198}
+    - Class: 114
+      Script: {instanceID: 5474}
+    - Class: 114
+      Script: {instanceID: 5892}
+    - Class: 114
+      Script: {instanceID: 5990}
+    - Class: 114
+      Script: {instanceID: 648340}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
+      Script: {instanceID: 0}
+    Assets/Scenes/menu.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 72
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1766}
+    - Class: 114
+      Script: {instanceID: 1956}
+    - Class: 114
+      Script: {instanceID: 1976}
+    - Class: 114
+      Script: {instanceID: 2046}
+    - Class: 114
+      Script: {instanceID: 2160}
+    - Class: 114
+      Script: {instanceID: 2188}
+    - Class: 114
+      Script: {instanceID: 2296}
+    - Class: 114
+      Script: {instanceID: 2550}
+    - Class: 114
+      Script: {instanceID: 2620}
+    - Class: 114
+      Script: {instanceID: 2732}
+    - Class: 114
+      Script: {instanceID: 2814}
+    - Class: 114
+      Script: {instanceID: 2970}
+    - Class: 114
+      Script: {instanceID: 3096}
+    - Class: 114
+      Script: {instanceID: 3106}
+    - Class: 114
+      Script: {instanceID: 3120}
+    - Class: 114
+      Script: {instanceID: 3156}
+    - Class: 114
+      Script: {instanceID: 3354}
+    - Class: 114
+      Script: {instanceID: 3552}
+    - Class: 114
+      Script: {instanceID: 3610}
+    - Class: 114
+      Script: {instanceID: 3622}
+    - Class: 114
+      Script: {instanceID: 3728}
+    - Class: 114
+      Script: {instanceID: 3734}
+    - Class: 114
+      Script: {instanceID: 4024}
+    - Class: 114
+      Script: {instanceID: 4198}
+    - Class: 114
+      Script: {instanceID: 4702}
+    - Class: 114
+      Script: {instanceID: 4854}
+    - Class: 114
+      Script: {instanceID: 4874}
+    - Class: 114
+      Script: {instanceID: 4902}
+    - Class: 114
+      Script: {instanceID: 4960}
+    - Class: 114
+      Script: {instanceID: 5018}
+    - Class: 114
+      Script: {instanceID: 5250}
+    - Class: 114
+      Script: {instanceID: 5366}
+    - Class: 114
+      Script: {instanceID: 5592}
+    - Class: 114
+      Script: {instanceID: 5638}
+    - Class: 114
+      Script: {instanceID: 5696}
+    - Class: 114
+      Script: {instanceID: 5910}
+    - Class: 114
+      Script: {instanceID: 5962}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
+      Script: {instanceID: 0}
+    - Class: 154
+      Script: {instanceID: 0}
+    - Class: 156
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
+    - Class: 208
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 218
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
+      Script: {instanceID: 0}
+    - Class: 850595691
+      Script: {instanceID: 0}
+    Assets/Scenes/scene1.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -203,69 +789,77 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2188}
     - Class: 114
+      Script: {instanceID: 2218}
+    - Class: 114
       Script: {instanceID: 2296}
     - Class: 114
-      Script: {instanceID: 2550}
+      Script: {instanceID: 2556}
     - Class: 114
-      Script: {instanceID: 2618}
+      Script: {instanceID: 2620}
     - Class: 114
-      Script: {instanceID: 2730}
+      Script: {instanceID: 2732}
     - Class: 114
-      Script: {instanceID: 2812}
+      Script: {instanceID: 2814}
     - Class: 114
-      Script: {instanceID: 2968}
+      Script: {instanceID: 2970}
     - Class: 114
-      Script: {instanceID: 3094}
+      Script: {instanceID: 3096}
     - Class: 114
-      Script: {instanceID: 3104}
+      Script: {instanceID: 3106}
     - Class: 114
-      Script: {instanceID: 3154}
+      Script: {instanceID: 3156}
     - Class: 114
-      Script: {instanceID: 3290}
+      Script: {instanceID: 3292}
     - Class: 114
-      Script: {instanceID: 3352}
+      Script: {instanceID: 3354}
     - Class: 114
-      Script: {instanceID: 3468}
+      Script: {instanceID: 3470}
     - Class: 114
-      Script: {instanceID: 3550}
+      Script: {instanceID: 3552}
     - Class: 114
-      Script: {instanceID: 3606}
+      Script: {instanceID: 3562}
     - Class: 114
-      Script: {instanceID: 3636}
+      Script: {instanceID: 3610}
     - Class: 114
-      Script: {instanceID: 3722}
+      Script: {instanceID: 3640}
     - Class: 114
       Script: {instanceID: 3728}
     - Class: 114
-      Script: {instanceID: 4018}
+      Script: {instanceID: 3734}
     - Class: 114
-      Script: {instanceID: 4192}
+      Script: {instanceID: 4024}
     - Class: 114
-      Script: {instanceID: 4272}
+      Script: {instanceID: 4198}
     - Class: 114
-      Script: {instanceID: 4328}
+      Script: {instanceID: 4278}
     - Class: 114
-      Script: {instanceID: 4848}
+      Script: {instanceID: 4854}
     - Class: 114
-      Script: {instanceID: 4868}
+      Script: {instanceID: 4874}
     - Class: 114
-      Script: {instanceID: 5010}
+      Script: {instanceID: 4960}
     - Class: 114
-      Script: {instanceID: 5242}
+      Script: {instanceID: 5250}
     - Class: 114
-      Script: {instanceID: 5260}
+      Script: {instanceID: 5254}
     - Class: 114
-      Script: {instanceID: 5356}
+      Script: {instanceID: 5270}
     - Class: 114
-      Script: {instanceID: 5578}
+      Script: {instanceID: 5474}
     - Class: 114
-      Script: {instanceID: 5680}
+      Script: {instanceID: 5592}
     - Class: 114
-      Script: {instanceID: 5890}
+      Script: {instanceID: 5696}
     - Class: 114
-      Script: {instanceID: 5944}
+      Script: {instanceID: 5892}
     - Class: 114
-      Script: {instanceID: 5972}
+      Script: {instanceID: 5910}
+    - Class: 114
+      Script: {instanceID: 5962}
+    - Class: 114
+      Script: {instanceID: 5990}
+    - Class: 114
+      Script: {instanceID: 648340}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -284,10 +878,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
-    - Class: 198
-      Script: {instanceID: 0}
-    - Class: 199
-      Script: {instanceID: 0}
     - Class: 208
       Script: {instanceID: 0}
     - Class: 212
@@ -302,7 +892,158 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    - Class: 238
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
+      Script: {instanceID: 0}
+    - Class: 850595691
+      Script: {instanceID: 0}
+    Assets/Scenes/scene5.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 72
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1766}
+    - Class: 114
+      Script: {instanceID: 1976}
+    - Class: 114
+      Script: {instanceID: 1998}
+    - Class: 114
+      Script: {instanceID: 2072}
+    - Class: 114
+      Script: {instanceID: 2160}
+    - Class: 114
+      Script: {instanceID: 2188}
+    - Class: 114
+      Script: {instanceID: 2218}
+    - Class: 114
+      Script: {instanceID: 2732}
+    - Class: 114
+      Script: {instanceID: 2814}
+    - Class: 114
+      Script: {instanceID: 2970}
+    - Class: 114
+      Script: {instanceID: 3096}
+    - Class: 114
+      Script: {instanceID: 3106}
+    - Class: 114
+      Script: {instanceID: 3156}
+    - Class: 114
+      Script: {instanceID: 3292}
+    - Class: 114
+      Script: {instanceID: 3354}
+    - Class: 114
+      Script: {instanceID: 3470}
+    - Class: 114
+      Script: {instanceID: 3552}
+    - Class: 114
+      Script: {instanceID: 3610}
+    - Class: 114
+      Script: {instanceID: 3640}
+    - Class: 114
+      Script: {instanceID: 3728}
+    - Class: 114
+      Script: {instanceID: 3734}
+    - Class: 114
+      Script: {instanceID: 4024}
+    - Class: 114
+      Script: {instanceID: 4198}
+    - Class: 114
+      Script: {instanceID: 4278}
+    - Class: 114
+      Script: {instanceID: 4854}
+    - Class: 114
+      Script: {instanceID: 4874}
+    - Class: 114
+      Script: {instanceID: 4960}
+    - Class: 114
+      Script: {instanceID: 5250}
+    - Class: 114
+      Script: {instanceID: 5474}
+    - Class: 114
+      Script: {instanceID: 5592}
+    - Class: 114
+      Script: {instanceID: 5696}
+    - Class: 114
+      Script: {instanceID: 5892}
+    - Class: 114
+      Script: {instanceID: 5910}
+    - Class: 114
+      Script: {instanceID: 5962}
+    - Class: 114
+      Script: {instanceID: 5990}
+    - Class: 114
+      Script: {instanceID: 648340}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
+      Script: {instanceID: 0}
+    - Class: 143
+      Script: {instanceID: 0}
+    - Class: 154
+      Script: {instanceID: 0}
+    - Class: 156
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 218
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     - Class: 241
       Script: {instanceID: 0}
@@ -495,7 +1236,13 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: e40b08ac7b3f58de3f9ad8ac66f5671d
+      Hash: a7930a897dfdbdeebd8cb094db323c97
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Checkpoint
+  - hash:
+      serializedVersion: 2
+      Hash: d11305a545284853fe060328788c1f50
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ItemPickup
@@ -657,10 +1404,16 @@ ScriptsOnlyBuild:
     className: Inventory
   - hash:
       serializedVersion: 2
-      Hash: 7990edf004311c9df382c2fd10cc0f94
+      Hash: da2db504bced5b8aabbe53451f51ac26
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AudioManager
+  - hash:
+      serializedVersion: 2
+      Hash: 433fa7e7899e5d951054497d709e4c8d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OpenGate
   - hash:
       serializedVersion: 2
       Hash: e09e8bebc0fcd32bb8af1287a6b44816
@@ -691,6 +1444,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: MarkerTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 9e884525edf59064a38e44acc5af9cd5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: IntroSequence
   - hash:
       serializedVersion: 2
       Hash: 8e6ceabfd38a184413d69b7db56c89cc
@@ -837,7 +1596,7 @@ ScriptsOnlyBuild:
     className: PlayModeRunnerCallback
   - hash:
       serializedVersion: 2
-      Hash: 48b5bb98b7823225be233a0b68fc8351
+      Hash: decaf382938715dc9f0218d20e8fc39f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FPSController
@@ -975,7 +1734,7 @@ ScriptsOnlyBuild:
     className: PathSplinePerformance
   - hash:
       serializedVersion: 2
-      Hash: 32a7c48b19cd4f3e7cf6d93c2324ae18
+      Hash: 243ea4bdcca8d120451ef33dc717ee1c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NPCInteract
@@ -1009,6 +1768,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: PhysicsRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 247d57230e9b530f72df18832d61b4ff
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CheckpointManager
   - hash:
       serializedVersion: 2
       Hash: 0fb27be807aa299702f28ad0bcad1f46
@@ -1053,6 +1818,12 @@ ScriptsOnlyBuild:
     className: ColorGrading
   - hash:
       serializedVersion: 2
+      Hash: 85a90a17cf81936c087bdd42922f9885
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SoundTrigger
+  - hash:
+      serializedVersion: 2
       Hash: 87ad7cc23834663396efaeba2c0f1d34
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1083,6 +1854,12 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
+      Hash: 2a491796813faa760aaae0347547b763
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EndScreen
+  - hash:
+      serializedVersion: 2
       Hash: 63d7b9b64a11859f416d72ba9a3c3fec
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
@@ -1105,6 +1882,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GeneralEasingTypes
+  - hash:
+      serializedVersion: 2
+      Hash: c749a70dcb99a5ab9c2e2d3e83063361
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SettingsMenu
   - hash:
       serializedVersion: 2
       Hash: 99f0f78788218459985f9b0975e79146
@@ -1155,6 +1938,12 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ShowEndScreen
+  - hash:
+      serializedVersion: 2
       Hash: d6fc8d3165070298511ec776ea575626
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
@@ -1183,7 +1972,22 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InventorySlot
+  - hash:
+      serializedVersion: 2
+      Hash: 3d2673602bbf8266a2e0c874a242773c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LockPanel
+  - hash:
+      serializedVersion: 2
+      Hash: a08ffe0817a51f8bd15106e35084a960
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LockInteract
   platform: 19
   scenePathNames:
-  - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/Maciej/Desktop/Reflection of The Darkness/HelloITGameJam.exe
+  - Assets/Scenes/menu.unity
+  - Assets/Scenes/intro_sequence.unity
+  - Assets/Scenes/scene1.unity
+  - Assets/Scenes/scene5.unity
+  playerPath: C:/Users/Maciej/Desktop/Reflection of The Darkness/v4/HelloITGameJam.exe

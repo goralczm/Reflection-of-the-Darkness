@@ -25,6 +25,7 @@ public class Inventory : MonoBehaviour
 
     [SerializeField] private InventorySlot[] _invSlots;
     [SerializeField] private Recipe[] _recipes;
+    [SerializeField] private Item _matchesItem;
 
     private void Start()
     {
@@ -116,5 +117,10 @@ public class Inventory : MonoBehaviour
             AddItem(recipe.output);
             DialogueManager.instance.ShowInfo("Created " + recipe.output.name, 4f);
         }
+    }
+
+    public void AddMatches()
+    {
+        AddItem(_matchesItem);
     }
 }
